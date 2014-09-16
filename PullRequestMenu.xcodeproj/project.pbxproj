@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7712BBDE19C7EAA000CF5971 /* PRMPublicGithubAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7712BBDC19C7EAA000CF5971 /* PRMPublicGithubAuthController.m */; };
+		7712BBDF19C7EAA000CF5971 /* PRMPublicGithubAuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7712BBDD19C7EAA000CF5971 /* PRMPublicGithubAuthController.xib */; };
+		7712BBE319C7F26800CF5971 /* PRMGithubEnterpriseAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7712BBE119C7F26800CF5971 /* PRMGithubEnterpriseAuthController.m */; };
+		7712BBE419C7F26800CF5971 /* PRMGithubEnterpriseAuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7712BBE219C7F26800CF5971 /* PRMGithubEnterpriseAuthController.xib */; };
+		7712BBE819C7F2A700CF5971 /* PRMAuthWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7712BBE619C7F2A700CF5971 /* PRMAuthWindowController.m */; };
+		7712BBEC19C8019600CF5971 /* PRMAlphaInvisibleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7712BBEB19C8019600CF5971 /* PRMAlphaInvisibleView.m */; };
+		77642F6C19C7BB1100AFB2DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F6A19C7BB1100AFB2DF /* main.m */; };
+		77642F6F19C7BB1B00AFB2DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77642F6D19C7BB1B00AFB2DF /* MainMenu.xib */; };
+		77642F7519C7BB2B00AFB2DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77642F7019C7BB2B00AFB2DF /* Images.xcassets */; };
+		77642F7619C7BB2B00AFB2DF /* PRMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F7219C7BB2B00AFB2DF /* PRMAppDelegate.m */; };
+		77642F7719C7BB2B00AFB2DF /* PRMLoginLaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F7419C7BB2B00AFB2DF /* PRMLoginLaunchController.m */; };
+		77642F7A19C7BC1000AFB2DF /* PRMPullsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F7919C7BC1000AFB2DF /* PRMPullsTracker.m */; };
+		77642F7D19C7BE4A00AFB2DF /* PRMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F7C19C7BE4A00AFB2DF /* PRMMenuView.m */; };
+		77642F8019C7C25F00AFB2DF /* PRMPullRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F7F19C7C25F00AFB2DF /* PRMPullRequest.m */; };
+		77642F8319C7CF4A00AFB2DF /* PRMAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F8219C7CF4A00AFB2DF /* PRMAccountController.m */; };
+		77642F8619C7D26900AFB2DF /* PRMKeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F8519C7D26900AFB2DF /* PRMKeychainHelper.m */; };
+		77642F8A19C7D64800AFB2DF /* PRMSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77642F8819C7D64800AFB2DF /* PRMSettingsController.m */; };
+		77642F8B19C7D64800AFB2DF /* PRMSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77642F8919C7D64800AFB2DF /* PRMSettingsController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7712BBDB19C7EAA000CF5971 /* PRMPublicGithubAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMPublicGithubAuthController.h; path = PullRequestMenu/PRMPublicGithubAuthController.h; sourceTree = SOURCE_ROOT; };
+		7712BBDC19C7EAA000CF5971 /* PRMPublicGithubAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMPublicGithubAuthController.m; path = PullRequestMenu/PRMPublicGithubAuthController.m; sourceTree = SOURCE_ROOT; };
+		7712BBDD19C7EAA000CF5971 /* PRMPublicGithubAuthController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRMPublicGithubAuthController.xib; path = PullRequestMenu/PRMPublicGithubAuthController.xib; sourceTree = SOURCE_ROOT; };
+		7712BBE019C7F26800CF5971 /* PRMGithubEnterpriseAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMGithubEnterpriseAuthController.h; path = PullRequestMenu/PRMGithubEnterpriseAuthController.h; sourceTree = SOURCE_ROOT; };
+		7712BBE119C7F26800CF5971 /* PRMGithubEnterpriseAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMGithubEnterpriseAuthController.m; path = PullRequestMenu/PRMGithubEnterpriseAuthController.m; sourceTree = SOURCE_ROOT; };
+		7712BBE219C7F26800CF5971 /* PRMGithubEnterpriseAuthController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRMGithubEnterpriseAuthController.xib; path = PullRequestMenu/PRMGithubEnterpriseAuthController.xib; sourceTree = SOURCE_ROOT; };
+		7712BBE519C7F2A700CF5971 /* PRMAuthWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMAuthWindowController.h; path = PullRequestMenu/PRMAuthWindowController.h; sourceTree = SOURCE_ROOT; };
+		7712BBE619C7F2A700CF5971 /* PRMAuthWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMAuthWindowController.m; path = PullRequestMenu/PRMAuthWindowController.m; sourceTree = SOURCE_ROOT; };
+		7712BBEA19C8019600CF5971 /* PRMAlphaInvisibleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMAlphaInvisibleView.h; path = PullRequestMenu/PRMAlphaInvisibleView.h; sourceTree = SOURCE_ROOT; };
+		7712BBEB19C8019600CF5971 /* PRMAlphaInvisibleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMAlphaInvisibleView.m; path = PullRequestMenu/PRMAlphaInvisibleView.m; sourceTree = SOURCE_ROOT; };
+		77642F3719C7B10000AFB2DF /* PullRequestMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PullRequestMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77642F6919C7BB1100AFB2DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PullRequestMenu/Info.plist; sourceTree = SOURCE_ROOT; };
+		77642F6A19C7BB1100AFB2DF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PullRequestMenu/main.m; sourceTree = SOURCE_ROOT; };
+		77642F6E19C7BB1B00AFB2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = PullRequestMenu/Base.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		77642F7019C7BB2B00AFB2DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PullRequestMenu/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		77642F7119C7BB2B00AFB2DF /* PRMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMAppDelegate.h; path = PullRequestMenu/PRMAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		77642F7219C7BB2B00AFB2DF /* PRMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMAppDelegate.m; path = PullRequestMenu/PRMAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		77642F7319C7BB2B00AFB2DF /* PRMLoginLaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMLoginLaunchController.h; path = PullRequestMenu/PRMLoginLaunchController.h; sourceTree = SOURCE_ROOT; };
+		77642F7419C7BB2B00AFB2DF /* PRMLoginLaunchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMLoginLaunchController.m; path = PullRequestMenu/PRMLoginLaunchController.m; sourceTree = SOURCE_ROOT; };
+		77642F7819C7BC1000AFB2DF /* PRMPullsTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMPullsTracker.h; path = PullRequestMenu/PRMPullsTracker.h; sourceTree = SOURCE_ROOT; };
+		77642F7919C7BC1000AFB2DF /* PRMPullsTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMPullsTracker.m; path = PullRequestMenu/PRMPullsTracker.m; sourceTree = SOURCE_ROOT; };
+		77642F7B19C7BE4A00AFB2DF /* PRMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMMenuView.h; path = PullRequestMenu/PRMMenuView.h; sourceTree = SOURCE_ROOT; };
+		77642F7C19C7BE4A00AFB2DF /* PRMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMMenuView.m; path = PullRequestMenu/PRMMenuView.m; sourceTree = SOURCE_ROOT; };
+		77642F7E19C7C25F00AFB2DF /* PRMPullRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMPullRequest.h; path = PullRequestMenu/PRMPullRequest.h; sourceTree = SOURCE_ROOT; };
+		77642F7F19C7C25F00AFB2DF /* PRMPullRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMPullRequest.m; path = PullRequestMenu/PRMPullRequest.m; sourceTree = SOURCE_ROOT; };
+		77642F8119C7CF4A00AFB2DF /* PRMAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMAccountController.h; path = PullRequestMenu/PRMAccountController.h; sourceTree = SOURCE_ROOT; };
+		77642F8219C7CF4A00AFB2DF /* PRMAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMAccountController.m; path = PullRequestMenu/PRMAccountController.m; sourceTree = SOURCE_ROOT; };
+		77642F8419C7D26900AFB2DF /* PRMKeychainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMKeychainHelper.h; path = PullRequestMenu/PRMKeychainHelper.h; sourceTree = SOURCE_ROOT; };
+		77642F8519C7D26900AFB2DF /* PRMKeychainHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMKeychainHelper.m; path = PullRequestMenu/PRMKeychainHelper.m; sourceTree = SOURCE_ROOT; };
+		77642F8719C7D64800AFB2DF /* PRMSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMSettingsController.h; path = PullRequestMenu/PRMSettingsController.h; sourceTree = SOURCE_ROOT; };
+		77642F8819C7D64800AFB2DF /* PRMSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMSettingsController.m; path = PullRequestMenu/PRMSettingsController.m; sourceTree = SOURCE_ROOT; };
+		77642F8919C7D64800AFB2DF /* PRMSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRMSettingsController.xib; path = PullRequestMenu/PRMSettingsController.xib; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77642F3419C7B10000AFB2DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77642F2E19C7B10000AFB2DF = {
+			isa = PBXGroup;
+			children = (
+				77642F3919C7B10000AFB2DF /* PullRequestMenu */,
+				77642F3819C7B10000AFB2DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77642F3819C7B10000AFB2DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77642F3719C7B10000AFB2DF /* PullRequestMenu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77642F3919C7B10000AFB2DF /* PullRequestMenu */ = {
+			isa = PBXGroup;
+			children = (
+				7712BBE019C7F26800CF5971 /* PRMGithubEnterpriseAuthController.h */,
+				7712BBE119C7F26800CF5971 /* PRMGithubEnterpriseAuthController.m */,
+				7712BBDB19C7EAA000CF5971 /* PRMPublicGithubAuthController.h */,
+				7712BBDC19C7EAA000CF5971 /* PRMPublicGithubAuthController.m */,
+				7712BBE519C7F2A700CF5971 /* PRMAuthWindowController.h */,
+				7712BBE619C7F2A700CF5971 /* PRMAuthWindowController.m */,
+				77642F7E19C7C25F00AFB2DF /* PRMPullRequest.h */,
+				77642F7F19C7C25F00AFB2DF /* PRMPullRequest.m */,
+				77642F7119C7BB2B00AFB2DF /* PRMAppDelegate.h */,
+				77642F7219C7BB2B00AFB2DF /* PRMAppDelegate.m */,
+				77642F7B19C7BE4A00AFB2DF /* PRMMenuView.h */,
+				77642F7C19C7BE4A00AFB2DF /* PRMMenuView.m */,
+				77642F7319C7BB2B00AFB2DF /* PRMLoginLaunchController.h */,
+				77642F7419C7BB2B00AFB2DF /* PRMLoginLaunchController.m */,
+				77642F7819C7BC1000AFB2DF /* PRMPullsTracker.h */,
+				77642F7919C7BC1000AFB2DF /* PRMPullsTracker.m */,
+				7712BBEA19C8019600CF5971 /* PRMAlphaInvisibleView.h */,
+				7712BBEB19C8019600CF5971 /* PRMAlphaInvisibleView.m */,
+				77642F8119C7CF4A00AFB2DF /* PRMAccountController.h */,
+				77642F8219C7CF4A00AFB2DF /* PRMAccountController.m */,
+				77642F8719C7D64800AFB2DF /* PRMSettingsController.h */,
+				77642F8819C7D64800AFB2DF /* PRMSettingsController.m */,
+				77642F8419C7D26900AFB2DF /* PRMKeychainHelper.h */,
+				77642F8519C7D26900AFB2DF /* PRMKeychainHelper.m */,
+				77642F8C19C7D64F00AFB2DF /* XIB */,
+				77642F3A19C7B10000AFB2DF /* Supporting Files */,
+			);
+			name = PullRequestMenu;
+			path = PullRequester;
+			sourceTree = "<group>";
+		};
+		77642F3A19C7B10000AFB2DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				77642F7019C7BB2B00AFB2DF /* Images.xcassets */,
+				77642F6919C7BB1100AFB2DF /* Info.plist */,
+				77642F6A19C7BB1100AFB2DF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77642F8C19C7D64F00AFB2DF /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				77642F6D19C7BB1B00AFB2DF /* MainMenu.xib */,
+				7712BBE219C7F26800CF5971 /* PRMGithubEnterpriseAuthController.xib */,
+				7712BBDD19C7EAA000CF5971 /* PRMPublicGithubAuthController.xib */,
+				77642F8919C7D64800AFB2DF /* PRMSettingsController.xib */,
+			);
+			name = XIB;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77642F3619C7B10000AFB2DF /* PullRequestMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77642F5419C7B10000AFB2DF /* Build configuration list for PBXNativeTarget "PullRequestMenu" */;
+			buildPhases = (
+				77642F3319C7B10000AFB2DF /* Sources */,
+				77642F3419C7B10000AFB2DF /* Frameworks */,
+				77642F3519C7B10000AFB2DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PullRequestMenu;
+			productName = PullRequester;
+			productReference = 77642F3719C7B10000AFB2DF /* PullRequestMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77642F2F19C7B10000AFB2DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PRM;
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Akiva Leffert";
+				TargetAttributes = {
+					77642F3619C7B10000AFB2DF = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = 77642F3219C7B10000AFB2DF /* Build configuration list for PBXProject "PullRequestMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77642F2E19C7B10000AFB2DF;
+			productRefGroup = 77642F3819C7B10000AFB2DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77642F3619C7B10000AFB2DF /* PullRequestMenu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77642F3519C7B10000AFB2DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7712BBE419C7F26800CF5971 /* PRMGithubEnterpriseAuthController.xib in Resources */,
+				77642F7519C7BB2B00AFB2DF /* Images.xcassets in Resources */,
+				77642F8B19C7D64800AFB2DF /* PRMSettingsController.xib in Resources */,
+				77642F6F19C7BB1B00AFB2DF /* MainMenu.xib in Resources */,
+				7712BBDF19C7EAA000CF5971 /* PRMPublicGithubAuthController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77642F3319C7B10000AFB2DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77642F8019C7C25F00AFB2DF /* PRMPullRequest.m in Sources */,
+				7712BBDE19C7EAA000CF5971 /* PRMPublicGithubAuthController.m in Sources */,
+				77642F8619C7D26900AFB2DF /* PRMKeychainHelper.m in Sources */,
+				77642F8A19C7D64800AFB2DF /* PRMSettingsController.m in Sources */,
+				7712BBEC19C8019600CF5971 /* PRMAlphaInvisibleView.m in Sources */,
+				77642F7719C7BB2B00AFB2DF /* PRMLoginLaunchController.m in Sources */,
+				77642F8319C7CF4A00AFB2DF /* PRMAccountController.m in Sources */,
+				77642F7619C7BB2B00AFB2DF /* PRMAppDelegate.m in Sources */,
+				7712BBE319C7F26800CF5971 /* PRMGithubEnterpriseAuthController.m in Sources */,
+				77642F6C19C7BB1100AFB2DF /* main.m in Sources */,
+				77642F7A19C7BC1000AFB2DF /* PRMPullsTracker.m in Sources */,
+				77642F7D19C7BE4A00AFB2DF /* PRMMenuView.m in Sources */,
+				7712BBE819C7F2A700CF5971 /* PRMAuthWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		77642F6D19C7BB1B00AFB2DF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77642F6E19C7BB1B00AFB2DF /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		77642F5219C7B10000AFB2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		77642F5319C7B10000AFB2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		77642F5519C7B10000AFB2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PullRequestMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		77642F5619C7B10000AFB2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PullRequestMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77642F3219C7B10000AFB2DF /* Build configuration list for PBXProject "PullRequestMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77642F5219C7B10000AFB2DF /* Debug */,
+				77642F5319C7B10000AFB2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77642F5419C7B10000AFB2DF /* Build configuration list for PBXNativeTarget "PullRequestMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77642F5519C7B10000AFB2DF /* Debug */,
+				77642F5619C7B10000AFB2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 77642F2F19C7B10000AFB2DF /* Project object */;
+}

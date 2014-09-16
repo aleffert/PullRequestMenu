@@ -1,6 +1,6 @@
 //
 //  main.m
-//  PullRequester
+//  PullRequestMenu
 //
 //  Created by Akiva Leffert on 9/15/14.
 //  Copyright (c) 2014 Akiva Leffert. All rights reserved.
