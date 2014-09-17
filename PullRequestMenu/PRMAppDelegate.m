@@ -98,7 +98,7 @@ static CGFloat PRMNormalPollInterval = 5 * 60; // default is five minutes
 
 - (void)addRequests:(NSArray*)requests toMenu:(NSMenu*)menu {
     NSArray* sortedRequests = [requests sortedArrayUsingComparator:^NSComparisonResult(PRMPullRequest* request, PRMPullRequest* otherRequest) {
-        return [request.modificationDate compare:otherRequest.modificationDate];
+        return [otherRequest.modificationDate compare: request.modificationDate];
     }];
     for(PRMPullRequest* request in sortedRequests) {
         NSMutableString* title = [[NSMutableString alloc] init];
