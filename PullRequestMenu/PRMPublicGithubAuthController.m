@@ -40,8 +40,7 @@
 }
 
 - (IBAction)getToken:(id)sender {
-    NSURL* tokenURL = [NSURL URLWithString:@"https://github.com/settings/applications#personal-access-tokens"];
-    [[NSWorkspace sharedWorkspace] openURL:tokenURL];
+    [self showGetTokenWithBaseURL:@"github.com"];
 }
 
 - (void)controlTextDidChange:(NSNotification *)obj {

@@ -40,15 +40,9 @@
         }
     }
     
-    if(self.window.sheets.count > 0) {
-        for(NSWindow* sheet in self.window.sheets) {
-            [sheet makeKeyAndOrderFront:nil];
-        }
-    }
-    else {
-        [self.window makeKeyAndOrderFront:nil];
-    }
     
+    [self.window makeKeyAndOrderFront:nil];
+    [NSApp activateIgnoringOtherApps:YES];
 }
 
 - (void)showAuthController:(PRMAuthWindowController*)controller {
