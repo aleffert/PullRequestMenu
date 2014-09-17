@@ -11,17 +11,13 @@
 #import "PRMAccountController.h"
 #import "PRMPullRequest.h"
 
-// SUPER TEMPORARY
-
-
 @interface PRMPullsTracker ()
 
 @property (assign, nonatomic) PRMPullsTrackerStatus status;
-@property (strong, nonatomic) NSMutableSet* knownRequests;
+@property (strong, nonatomic) NSSet* knownRequests;
 @property (assign, nonatomic) BOOL didInitialFetch;
 @property (strong, nonatomic) NSURLSessionDataTask* loadTask;
 @property (strong, nonatomic) PRMAccountController* accountController;
-@property (strong, nonatomic) id accountChangedNotification;
 
 @end
 
@@ -70,14 +66,12 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         for(PRMPullRequest* request in foundRequests) {
             if(![self.knownRequests containsObject:request]) {
-                [self.knownRequests addObject:request];
+                if(!self.didInitialFetch) {
+                    // TODO: Show notification
+                }
             }
-            
-            if(!self.didInitialFetch) {
-                // TODO: Show notification
-            }
-            
         }
+        self.knownRequests = [[NSMutableSet alloc] initWithArray:foundRequests];
         self.didInitialFetch = YES;
         
         [self setStatusNotifyingDelegate:PRMPullsTrackerStatusLoaded];
