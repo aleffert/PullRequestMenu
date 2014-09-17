@@ -15,7 +15,7 @@
 #import "PRMPullsTracker.h"
 #import "PRMSettingsController.h"
 
-static CGFloat PRMNormalPollInterval = 5 * 60; // default is five minutes
+static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
 
 @interface PRMAppDelegate () <PRMPullsTrackerDelegate, NSApplicationDelegate>
 
