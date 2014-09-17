@@ -109,8 +109,9 @@ static CGFloat PRMNormalPollInterval = 5 * 60; // default is five minutes
             [title appendString:@": "];
         }
         
-        [title appendString:[request.title substringToIndex:MIN(40, request.title.length)]];
-        if(title.length < request.title.length) {
+        NSString* clippedTitle = [request.title substringToIndex:MIN(40, request.title.length)];
+        [title appendString:clippedTitle];
+        if(clippedTitle.length < request.title.length) {
             [title appendString:@"…"];
         }
         NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:title action:@selector(openURLForRequestItem:) keyEquivalent:@""];
