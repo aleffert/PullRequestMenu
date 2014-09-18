@@ -73,6 +73,8 @@
     CGRect frame = self.frame;
     frame.size.width = width;
     self.frame = frame;
+    
+    [self setNeedsDisplay:YES];
 }
 
 @end

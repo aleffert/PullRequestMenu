@@ -10,6 +10,9 @@
 
 @class PRMPullsTracker;
 
+@class PRMAccountController;
+@class PRMSettingsController;
+
 @protocol PRMPullsTrackerDelegate <NSObject>
 
 - (void)pullTrackerChangedState:(PRMPullsTracker*)tracker;
@@ -25,11 +28,10 @@ typedef NS_ENUM(NSUInteger, PRMPullsTrackerStatus) {
     PRMPullsTrackerStatusConnectionError
 };
 
-@class PRMAccountController;
 
 @interface PRMPullsTracker : NSObject
 
-- (id)initWithAccountController:(PRMAccountController*)accountController;
+- (id)initWithAccountController:(PRMAccountController*)accountController settingsController:(PRMSettingsController*)settingsController;
 
 @property (weak, nonatomic) id <PRMPullsTrackerDelegate> delegate;
 

@@ -11,13 +11,14 @@
 #import "PRMAccountController.h"
 #import "PRMLoginLaunchController.h"
 #import "PRMMenuView.h"
+#import "PRMSettingsController.h"
 #import "PRMPullRequest.h"
 #import "PRMPullsTracker.h"
-#import "PRMSettingsController.h"
+#import "PRMSettingsWindowController.h"
 
 static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
 
-@interface PRMAppDelegate () <PRMPullsTrackerDelegate, NSApplicationDelegate>
+@interface PRMAppDelegate () <PRMPullsTrackerDelegate, NSApplicationDelegate, NSUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) NSMenu* statusMenu;
 @property (strong, nonatomic) NSStatusItem* item;
@@ -26,7 +27,7 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
 @property (strong, nonatomic) PRMAccountController* accountController;
 @property (strong, nonatomic) PRMLoginLaunchController* launchController;
 
-@property (strong, nonatomic) PRMSettingsController* settingsController;
+@property (strong, nonatomic) PRMSettingsWindowController* settingsWindowController;
 
 @property (strong, nonatomic) PRMPullsTracker* pullsTracker;
 
@@ -40,12 +41,16 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
     self.itemView = [[PRMMenuView alloc] initWithFrame:NSMakeRect(0, 0, 20, 20) statusItem:self.item];
     [self.item setView:self.itemView];
     
+    [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
+    
+    PRMSettingsController* settingsController = [[PRMSettingsController alloc] init];
+    
     self.launchController = [[PRMLoginLaunchController alloc] init];
     [self.launchController.launchOnLoginItem setAction:@selector(toggleActivateOnLogin:)];
     
     self.accountController = [[PRMAccountController alloc] init];
     
-    self.pullsTracker = [[PRMPullsTracker alloc] initWithAccountController:self.accountController];
+    self.pullsTracker = [[PRMPullsTracker alloc] initWithAccountController:self.accountController settingsController:settingsController];
     self.pullsTracker.delegate = self;
     
     
@@ -55,8 +60,9 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
     self.itemView.text = @" ";
     [self rebuildMenu];
     
-    self.settingsController = [[PRMSettingsController alloc] initWithWindowNibName:@"PRMSettingsController"];
-    self.settingsController.accountController = self.accountController;
+    self.settingsWindowController = [[PRMSettingsWindowController alloc] initWithWindowNibName:@"PRMSettingsController"];
+    self.settingsWindowController.accountController = self.accountController;
+    self.settingsWindowController.settingsController = settingsController;
     
     [self spawnTimer];
 }
@@ -83,10 +89,11 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
 
 - (void)toggleActivateOnLogin:(NSMenuItem*)sender {
     self.launchController.launchOnLogin = !self.launchController.launchOnLogin;
+    [self rebuildMenu];
 }
 
 - (void)configure:(NSMenuItem*)sender {
-    [self.settingsController show];
+    [self.settingsWindowController show];
 }
 
 - (void)openURLForRequestItem:(NSMenuItem*)item {
@@ -173,6 +180,10 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
         }
     }();
     self.itemView.text = itemText;
+}
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
+    return YES;
 }
 
 @end

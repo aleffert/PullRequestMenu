@@ -50,7 +50,7 @@
                             <button verticalHuggingPriority="750" id="6Y4-dV-axa">
                                 <rect key="frame" x="123" y="58" width="218" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Get a Token" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0g7-Xi-Mgp">
+                                <buttonCell key="cell" type="push" title="Need a Token?" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0g7-Xi-Mgp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

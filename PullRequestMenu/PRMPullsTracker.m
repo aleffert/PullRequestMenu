@@ -10,6 +10,7 @@
 
 #import "PRMAccountController.h"
 #import "PRMPullRequest.h"
+#import "PRMSettingsController.h"
 
 @interface PRMPullsTracker ()
 
@@ -18,15 +19,17 @@
 @property (assign, nonatomic) BOOL didInitialFetch;
 @property (strong, nonatomic) NSURLSessionDataTask* loadTask;
 @property (strong, nonatomic) PRMAccountController* accountController;
+@property (strong, nonatomic) PRMSettingsController* settingsController;
 
 @end
 
 @implementation PRMPullsTracker
 
-- (id)initWithAccountController:(PRMAccountController*)accountController {
+- (id)initWithAccountController:(PRMAccountController*)accountController settingsController:(PRMSettingsController *)settingsController {
     self = [super init];
     if(self != nil) {
         self.accountController = accountController;
+        self.settingsController = settingsController;
         self.knownRequests = [[NSMutableSet alloc] init];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accountChanged:) name:PRMAccountControllerChangedAccountNotification object:nil];
@@ -64,10 +67,14 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        BOOL shouldPostNotification = [self.settingsController shouldShowLocalNotifications];
         for(PRMPullRequest* request in foundRequests) {
             if(![self.knownRequests containsObject:request]) {
-                if(!self.didInitialFetch) {
-                    // TODO: Show notification
+                if(!self.didInitialFetch && shouldPostNotification) {
+                    NSUserNotification* notification = [[NSUserNotification alloc] init];
+                    notification.title = @"New Pull Request";
+                    notification.informativeText = [NSString stringWithFormat:@"%@: %@", request.repoName, request.title];
+                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
                 }
             }
         }
@@ -102,7 +109,12 @@
         return;
     }
     
-    [self setStatusNotifyingDelegate:PRMPullsTrackerStatusLoading];
+    if(self.didInitialFetch) {
+        [self setStatusNotifyingDelegate:PRMPullsTrackerStatusLoaded];
+    }
+    else {
+        [self setStatusNotifyingDelegate:PRMPullsTrackerStatusLoading];
+    }
     
     __weak __typeof(self) weakSelf = self;
     NSURL* requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/issues?access_token=%@", self.accountController.apiURL, self.accountController.accessToken]];

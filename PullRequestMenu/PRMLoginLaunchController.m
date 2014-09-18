@@ -136,6 +136,7 @@ static void loginItemsChanged(LSSharedFileListRef listRef, void *context)
     } else {
         [self addMainBundleToLoginItems];
     }
+    self.launchOnLoginItem.state = value;
 }
 
 - (void)loginItemsChanged:(LSSharedFileListRef)list {
