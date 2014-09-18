@@ -60,7 +60,7 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
     self.itemView.text = @" ";
     [self rebuildMenu];
     
-    self.settingsWindowController = [[PRMSettingsWindowController alloc] initWithWindowNibName:@"PRMSettingsController"];
+    self.settingsWindowController = [[PRMSettingsWindowController alloc] initWithWindowNibName:@"PRMSettingsWindowController"];
     self.settingsWindowController.accountController = self.accountController;
     self.settingsWindowController.settingsController = settingsController;
     
@@ -138,20 +138,20 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
         case PRMPullsTrackerStatusUnconfigured:
             break;
         case PRMPullsTrackerStatusBadCredentials:
-            [self.statusMenu addItemWithTitle:@"Bad Credentials" action:nil keyEquivalent:@""];
             [self.statusMenu addItem:[NSMenuItem separatorItem]];
+            [self.statusMenu addItemWithTitle:@"Bad Credentials" action:nil keyEquivalent:@""];
             break;
         case PRMPullsTrackerStatusConnectionError:
-            [self.statusMenu addItemWithTitle:@"Connection Error" action:nil keyEquivalent:@""];
             [self.statusMenu addItem:[NSMenuItem separatorItem]];
+            [self.statusMenu addItemWithTitle:@"Connection Error" action:nil keyEquivalent:@""];
             break;
         case PRMPullsTrackerStatusLoading:
-            [self.statusMenu addItemWithTitle:@"Loading…" action:nil keyEquivalent:@""];
             [self.statusMenu addItem:[NSMenuItem separatorItem]];
+            [self.statusMenu addItemWithTitle:@"Loading…" action:nil keyEquivalent:@""];
             break;
         case PRMPullsTrackerStatusParseError:
-            [self.statusMenu addItemWithTitle:@"Response Error" action:nil keyEquivalent:@""];
             [self.statusMenu addItem:[NSMenuItem separatorItem]];
+            [self.statusMenu addItemWithTitle:@"Response Error" action:nil keyEquivalent:@""];
             break;
         case PRMPullsTrackerStatusLoaded: {
             [self.statusMenu addItem:[NSMenuItem separatorItem]];
