@@ -12,6 +12,8 @@
 #import "PRMPullRequest.h"
 #import "PRMSettingsController.h"
 
+NSString* const PRMPullNotificationURL = @"PRMPullNotificationURL";
+
 @interface PRMPullsTracker ()
 
 @property (assign, nonatomic) PRMPullsTrackerStatus status;
@@ -72,6 +74,7 @@
             if(![self.knownRequests containsObject:request] && self.didInitialFetch && shouldPostNotification) {
                 NSUserNotification* notification = [[NSUserNotification alloc] init];
                 notification.title = @"New Pull Request";
+                notification.userInfo = @{PRMPullNotificationURL : request.htmlURL};
                 notification.informativeText = [NSString stringWithFormat:@"%@: %@", request.repoName, request.title];
                 [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
             }

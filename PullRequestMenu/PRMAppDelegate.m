@@ -182,8 +182,15 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
     self.itemView.text = itemText;
 }
 
+#pragma mark Notifications
+
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
     return YES;
+}
+
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
+    NSString* url = [[notification userInfo] objectForKey:PRMPullNotificationURL];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
 }
 
 @end

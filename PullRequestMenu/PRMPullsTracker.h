@@ -13,6 +13,8 @@
 @class PRMAccountController;
 @class PRMSettingsController;
 
+extern NSString* const PRMPullNotificationURL;
+
 @protocol PRMPullsTrackerDelegate <NSObject>
 
 - (void)pullTrackerChangedState:(PRMPullsTracker*)tracker;
