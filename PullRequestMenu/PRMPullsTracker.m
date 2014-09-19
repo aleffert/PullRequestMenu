@@ -69,13 +69,11 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         BOOL shouldPostNotification = [self.settingsController shouldShowLocalNotifications];
         for(PRMPullRequest* request in foundRequests) {
-            if(![self.knownRequests containsObject:request]) {
-                if(!self.didInitialFetch && shouldPostNotification) {
-                    NSUserNotification* notification = [[NSUserNotification alloc] init];
-                    notification.title = @"New Pull Request";
-                    notification.informativeText = [NSString stringWithFormat:@"%@: %@", request.repoName, request.title];
-                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-                }
+            if(![self.knownRequests containsObject:request] && self.didInitialFetch && shouldPostNotification) {
+                NSUserNotification* notification = [[NSUserNotification alloc] init];
+                notification.title = @"New Pull Request";
+                notification.informativeText = [NSString stringWithFormat:@"%@: %@", request.repoName, request.title];
+                [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
             }
         }
         self.knownRequests = [[NSMutableSet alloc] initWithArray:foundRequests];
