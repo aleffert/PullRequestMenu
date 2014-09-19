@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7704ECAE19CBB02500B49D7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7704ECAD19CBB02500B49D7B /* main.m */; };
+		7704ECB119CBB02500B49D7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7704ECB019CBB02500B49D7B /* AppDelegate.m */; };
+		7704ECB319CBB02500B49D7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7704ECB219CBB02500B49D7B /* Images.xcassets */; };
+		7704ECB619CBB02500B49D7B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7704ECB419CBB02500B49D7B /* MainMenu.xib */; };
+		7704ECC919CBB04400B49D7B /* PRMLaunchHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 7704ECA919CBB02500B49D7B /* PRMLaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7704ECCD19CBB06500B49D7B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7704ECCC19CBB06500B49D7B /* Cocoa.framework */; };
+		7704ECCE19CBB06C00B49D7B /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7704ECA319CBAFF500B49D7B /* ServiceManagement.framework */; };
 		7712BBDE19C7EAA000CF5971 /* PRMPublicGithubAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7712BBDC19C7EAA000CF5971 /* PRMPublicGithubAuthController.m */; };
 		7712BBDF19C7EAA000CF5971 /* PRMPublicGithubAuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7712BBDD19C7EAA000CF5971 /* PRMPublicGithubAuthController.xib */; };
 		7712BBE319C7F26800CF5971 /* PRMGithubEnterpriseAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7712BBE119C7F26800CF5971 /* PRMGithubEnterpriseAuthController.m */; };
@@ -28,7 +35,41 @@
 		77642F8B19C7D64800AFB2DF /* PRMSettingsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77642F8919C7D64800AFB2DF /* PRMSettingsWindowController.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7704ECCA19CBB04A00B49D7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77642F2F19C7B10000AFB2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7704ECA819CBB02500B49D7B;
+			remoteInfo = PRMLaunchHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7704ECA119CBAFC300B49D7B /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				7704ECC919CBB04400B49D7B /* PRMLaunchHelper.app in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		7704ECA319CBAFF500B49D7B /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		7704ECA919CBB02500B49D7B /* PRMLaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PRMLaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7704ECAC19CBB02500B49D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7704ECAD19CBB02500B49D7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7704ECAF19CBB02500B49D7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7704ECB019CBB02500B49D7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7704ECB219CBB02500B49D7B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7704ECB519CBB02500B49D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7704ECCC19CBB06500B49D7B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7704ECD019CBB1B400B49D7B /* PRMLaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PRMLaunchHelper.entitlements; sourceTree = "<group>"; };
 		7712BBDB19C7EAA000CF5971 /* PRMPublicGithubAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRMPublicGithubAuthController.h; path = PullRequestMenu/PRMPublicGithubAuthController.h; sourceTree = SOURCE_ROOT; };
 		7712BBDC19C7EAA000CF5971 /* PRMPublicGithubAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRMPublicGithubAuthController.m; path = PullRequestMenu/PRMPublicGithubAuthController.m; sourceTree = SOURCE_ROOT; };
 		7712BBDD19C7EAA000CF5971 /* PRMPublicGithubAuthController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PRMPublicGithubAuthController.xib; path = PullRequestMenu/PRMPublicGithubAuthController.xib; sourceTree = SOURCE_ROOT; };
@@ -67,20 +108,63 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		77642F3419C7B10000AFB2DF /* Frameworks */ = {
+		7704ECA619CBB02500B49D7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77642F3419C7B10000AFB2DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7704ECCE19CBB06C00B49D7B /* ServiceManagement.framework in Frameworks */,
+				7704ECCD19CBB06500B49D7B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7704ECAA19CBB02500B49D7B /* PRMLaunchHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7704ECD019CBB1B400B49D7B /* PRMLaunchHelper.entitlements */,
+				7704ECAF19CBB02500B49D7B /* AppDelegate.h */,
+				7704ECB019CBB02500B49D7B /* AppDelegate.m */,
+				7704ECB219CBB02500B49D7B /* Images.xcassets */,
+				7704ECB419CBB02500B49D7B /* MainMenu.xib */,
+				7704ECAB19CBB02500B49D7B /* Supporting Files */,
+			);
+			path = PRMLaunchHelper;
+			sourceTree = "<group>";
+		};
+		7704ECAB19CBB02500B49D7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7704ECAC19CBB02500B49D7B /* Info.plist */,
+				7704ECAD19CBB02500B49D7B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7704ECCF19CBB07800B49D7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7704ECCC19CBB06500B49D7B /* Cocoa.framework */,
+				7704ECA319CBAFF500B49D7B /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			path = PullRequester;
+			sourceTree = "<group>";
+		};
 		77642F2E19C7B10000AFB2DF = {
 			isa = PBXGroup;
 			children = (
 				77642F3919C7B10000AFB2DF /* PullRequestMenu */,
+				7704ECAA19CBB02500B49D7B /* PRMLaunchHelper */,
+				7704ECCF19CBB07800B49D7B /* Frameworks */,
 				77642F3819C7B10000AFB2DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				77642F3719C7B10000AFB2DF /* PullRequestMenu.app */,
+				7704ECA919CBB02500B49D7B /* PRMLaunchHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +239,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7704ECA819CBB02500B49D7B /* PRMLaunchHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7704ECC319CBB02500B49D7B /* Build configuration list for PBXNativeTarget "PRMLaunchHelper" */;
+			buildPhases = (
+				7704ECA519CBB02500B49D7B /* Sources */,
+				7704ECA619CBB02500B49D7B /* Frameworks */,
+				7704ECA719CBB02500B49D7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PRMLaunchHelper;
+			productName = PRMLaunchHelper;
+			productReference = 7704ECA919CBB02500B49D7B /* PRMLaunchHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		77642F3619C7B10000AFB2DF /* PullRequestMenu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77642F5419C7B10000AFB2DF /* Build configuration list for PBXNativeTarget "PullRequestMenu" */;
@@ -161,10 +263,12 @@
 				77642F3319C7B10000AFB2DF /* Sources */,
 				77642F3419C7B10000AFB2DF /* Frameworks */,
 				77642F3519C7B10000AFB2DF /* Resources */,
+				7704ECA119CBAFC300B49D7B /* Copy Files */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7704ECCB19CBB04A00B49D7B /* PBXTargetDependency */,
 			);
 			name = PullRequestMenu;
 			productName = PullRequester;
@@ -181,10 +285,23 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Akiva Leffert";
 				TargetAttributes = {
+					7704ECA819CBB02500B49D7B = {
+						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					77642F3619C7B10000AFB2DF = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = JRMN97FF4J;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -206,11 +323,21 @@
 			projectRoot = "";
 			targets = (
 				77642F3619C7B10000AFB2DF /* PullRequestMenu */,
+				7704ECA819CBB02500B49D7B /* PRMLaunchHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7704ECA719CBB02500B49D7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7704ECB319CBB02500B49D7B /* Images.xcassets in Resources */,
+				7704ECB619CBB02500B49D7B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77642F3519C7B10000AFB2DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +353,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7704ECA519CBB02500B49D7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7704ECB119CBB02500B49D7B /* AppDelegate.m in Sources */,
+				7704ECAE19CBB02500B49D7B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77642F3319C7B10000AFB2DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,7 +385,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7704ECCB19CBB04A00B49D7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7704ECA819CBB02500B49D7B /* PRMLaunchHelper */;
+			targetProxy = 7704ECCA19CBB04A00B49D7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		7704ECB419CBB02500B49D7B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7704ECB519CBB02500B49D7B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		77642F6D19C7BB1B00AFB2DF /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -261,6 +413,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7704ECC419CBB02500B49D7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PRMLaunchHelper/PRMLaunchHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PRMLaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7704ECC519CBB02500B49D7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PRMLaunchHelper/PRMLaunchHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PRMLaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		77642F5219C7B10000AFB2DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -278,7 +460,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -320,7 +502,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -344,7 +526,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PullRequestMenu/PullRequestMenu.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = PullRequestMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -357,7 +538,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PullRequestMenu/PullRequestMenu.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = PullRequestMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -368,6 +548,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7704ECC319CBB02500B49D7B /* Build configuration list for PBXNativeTarget "PRMLaunchHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7704ECC419CBB02500B49D7B /* Debug */,
+				7704ECC519CBB02500B49D7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		77642F3219C7B10000AFB2DF /* Build configuration list for PBXProject "PullRequestMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
