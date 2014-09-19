@@ -10,7 +10,6 @@
 
 #import <ServiceManagement/ServiceManagement.h>
 
-static NSString* PRMLaunchOnLoginKey = @"PRMLaunchOnLoginKey";
 static NSString* PRMLaunchHelperBundleID = @"com.ognid.PRMLaunchHelper";
 
 @interface PRMLoginLaunchController ()
@@ -48,8 +47,6 @@ static NSString* PRMLaunchHelperBundleID = @"com.ognid.PRMLaunchHelper";
 {
     SMLoginItemSetEnabled((__bridge CFStringRef)PRMLaunchHelperBundleID, value);
     self.launchOnLoginItem.state = value;
-    [[NSUserDefaults standardUserDefaults] setBool:value forKey:PRMLaunchOnLoginKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
