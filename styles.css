@@ -1,0 +1,29 @@
+body {
+    font-family:"Avenir";
+    text-align: center;
+}
+
+#title {
+    font-size: 48;
+    padding-bottom: 40pt;
+}
+
+.explanation {
+    margin-top: 20pt;
+    margin-bottom: 20pt;
+}
+
+.imageblock {
+    width : 500pt;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+a {
+    color: rgb(47,140,185);
+}
+
+img {
+    max-width : 100%;
+    max-height : auto;
+}
