@@ -10,7 +10,7 @@
 
 @interface PRMKeychainHelper : NSObject
 
-- (id)initWithServiceName:(NSString*)serviceName;
+- (id)initWithServiceName:(NSString*)serviceName account:(NSString*)account;
 
 - (OSStatus)saveData:(NSData*)data;
 - (NSData*)loadWithError:(OSStatus*)errorPtr;

@@ -11,14 +11,16 @@
 @interface PRMKeychainHelper ()
 
 @property (strong, nonatomic) NSString* serviceName;
+@property (strong, nonatomic) NSString* account;
 
 @end
 
 @implementation PRMKeychainHelper
 
-- (id)initWithServiceName:(NSString*)serviceName {
+- (id)initWithServiceName:(NSString*)serviceName account:(NSString*)account {
     self = [super init];
     self.serviceName = serviceName;
+    self.account = account;
     return self;
 }
 
@@ -28,6 +30,8 @@
     @{
       (__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword,
       (__bridge id)kSecAttrService : self.serviceName,
+      (__bridge id)kSecAttrAccount : self.account,
+      (__bridge id)kSecMatchLimit : (__bridge id)kSecMatchLimitOne,
       };
     
     OSStatus status = SecItemDelete(keychainQuery);
@@ -46,6 +50,7 @@
     @{
       (__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword,
       (__bridge id)kSecAttrService : self.serviceName,
+      (__bridge id)kSecAttrAccount : self.account,
       (__bridge id)kSecValueData : data
       };
     status = SecItemAdd(keychainQuery, nil);
@@ -63,6 +68,7 @@
     @{
       (__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword,
       (__bridge id)kSecAttrService : self.serviceName,
+      (__bridge id)kSecAttrAccount : self.account,
       (__bridge id)kSecReturnData : (__bridge id)kCFBooleanTrue,
       (__bridge id)kSecMatchLimit : (__bridge id)kSecMatchLimitOne
       };

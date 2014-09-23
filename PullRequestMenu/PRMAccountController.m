@@ -48,8 +48,8 @@ NSString* const PRMAccountControllerChangedAccountNotification = @"PRMAccountCon
 - (id)init {
     self = [super init];
     if(self != nil) {
-        NSString* serviceName = [NSString stringWithFormat:@"%@.account", [[NSBundle mainBundle] bundleIdentifier]];
-        self.keychainHelper = [[PRMKeychainHelper alloc] initWithServiceName:serviceName];
+        NSString* serviceName = [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] bundleIdentifier]];
+        self.keychainHelper = [[PRMKeychainHelper alloc] initWithServiceName:serviceName account:@"main"];
         [self loadAccountInfoIfPossible];
     }
     return self;
