@@ -32,19 +32,31 @@
     return NO;
 }
 
+- (NSColor*)foregroundColor {
+    return NSColor.textBackgroundColor;
+}
+
+- (NSColor*)backgroundColor {
+    return NSColor.labelColor;
+}
+
 - (void)drawRect:(NSRect)dirtyRect {
     [self.item drawStatusBarBackgroundInRect:dirtyRect withHighlight:self.highlighted];
     
     CGRect backgroundRect = CGRectMake(2, 2, self.bounds.size.width - 4, 16);
     NSBezierPath* bezierPath = [NSBezierPath bezierPathWithRoundedRect:backgroundRect xRadius:8 yRadius:8];
-    [[NSColor blackColor] setFill];
+    [[self backgroundColor] setFill];
     [bezierPath fill];
     
     if(self.text != nil) {
-        NSMutableAttributedString* text = [[NSMutableAttributedString alloc] initWithString:self.text attributes:@{NSFontAttributeName: self.font, NSForegroundColorAttributeName : [NSColor whiteColor]}];
+        NSMutableAttributedString* text = [[NSMutableAttributedString alloc] initWithString:self.text attributes:@{NSFontAttributeName: self.font, NSForegroundColorAttributeName : [self foregroundColor]}];
         [text setAlignment:NSCenterTextAlignment range:NSMakeRange(0, text.length)];
         [text drawInRect:self.bounds];
     }
+}
+
+- (void)viewDidChangeEffectiveAppearance {
+    [self setNeedsDisplay:YES];
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {

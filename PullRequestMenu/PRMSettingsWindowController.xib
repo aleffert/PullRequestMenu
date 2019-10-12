@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PRMSettingsWindowController">
             <connections>
                 <outlet property="disconnectView" destination="spW-h2-Ija" id="AI3-eR-acg"/>
+                <outlet property="filterAllMenuItem" destination="IVN-9i-dCU" id="KMX-EV-Dc3"/>
+                <outlet property="filterAssignedMenuItem" destination="wof-oG-Ajq" id="nXk-XP-3yq"/>
+                <outlet property="filterCreatedMenuItem" destination="7Wf-LD-kly" id="Kzp-Go-t1t"/>
+                <outlet property="filterMentionedMenuItem" destination="YpB-Es-Mm6" id="9dM-0H-AaJ"/>
+                <outlet property="filterMenu" destination="0Ah-0o-geE" id="IWv-Ca-8kP"/>
+                <outlet property="filterSubscribedMenuItem" destination="nLf-Ug-yga" id="rwL-La-cC4"/>
                 <outlet property="infoLabel" destination="xWT-aj-wmx" id="6Ku-dU-MK9"/>
                 <outlet property="noAccountsView" destination="eWe-Pp-fks" id="Oss-vD-a4e"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -66,7 +73,7 @@
             <point key="canvasLocation" x="350.5" y="927.5"/>
         </customView>
         <customView id="spW-h2-Ija" customClass="PRMAlphaInvisibleView">
-            <rect key="frame" x="0.0" y="-5" width="407" height="168"/>
+            <rect key="frame" x="0.0" y="0.0" width="407" height="221"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" id="rh7-Ky-n1s">
@@ -81,8 +88,8 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="xWT-aj-wmx">
-                    <rect key="frame" x="65" y="109" width="277" height="39"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="65" y="162" width="277" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="eez-No-Egs">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -90,15 +97,63 @@
                     </textFieldCell>
                 </textField>
                 <button id="DX6-ky-MNu">
-                    <rect key="frame" x="81" y="75" width="244" height="18"/>
+                    <rect key="frame" x="81" y="128" width="244" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Show Notifications on New Request" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="TFe-q5-xVy">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="meD-ne-9SN">
+                    <rect key="frame" x="49" y="99" width="105" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Show Requests:" id="p0r-do-Crg">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" id="0Ah-0o-geE">
+                    <rect key="frame" x="160" y="94" width="198" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="8vL-c6-7pX">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="zuy-pN-Uxp">
+                            <items>
+                                <menuItem title="Assigned to Me" id="wof-oG-Ajq">
+                                    <connections>
+                                        <action selector="choseIssueFilter:" target="-2" id="CEz-QI-bpa"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="I Subscribe to" id="nLf-Ug-yga">
+                                    <connections>
+                                        <action selector="choseIssueFilter:" target="-2" id="pb0-Ls-HFw"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="I Can See" id="IVN-9i-dCU">
+                                    <connections>
+                                        <action selector="choseIssueFilter:" target="-2" id="H8V-20-le8"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="I Created" id="7Wf-LD-kly">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="choseIssueFilter:" target="-2" id="vPr-7t-JAr"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Mentioning Me" id="YpB-Es-Mm6">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="choseIssueFilter:" target="-2" id="Hu2-mx-om4"/>
+                                    </connections>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
             </subviews>
-            <point key="canvasLocation" x="350.5" y="1246"/>
+            <point key="canvasLocation" x="350.5" y="1245.5"/>
         </customView>
     </objects>
 </document>

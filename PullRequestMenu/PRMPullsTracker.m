@@ -118,7 +118,7 @@ NSString* const PRMPullNotificationURL = @"PRMPullNotificationURL";
     }
     
     __weak __typeof(self) weakSelf = self;
-    NSURL* requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/issues?access_token=%@", self.accountController.apiURL, self.accountController.accessToken]];
+    NSURL* requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/issues?access_token=%@&filter=%@", self.accountController.apiURL, self.accountController.accessToken, self.settingsController.filterModeString]];
     NSURLRequest* request = [NSURLRequest requestWithURL:requestURL];
     NSURLSessionDataTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(weakSelf.loadTask.state == NSURLSessionTaskStateCanceling) {

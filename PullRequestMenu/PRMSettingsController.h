@@ -8,8 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, PRMFilterMode) {
+    PRMFilterModeAll,
+    PRMFilterModeAssigned,
+    PRMFilterModeCreated,
+    PRMFilterModeMentioned,
+    PRMFilterModeSubscribed,
+};
+
 @interface PRMSettingsController : NSObject
 
 @property (assign, nonatomic) BOOL shouldShowLocalNotifications;
+@property (assign, nonatomic) PRMFilterMode filterMode;
+
+@property (readonly, nonatomic) NSString* filterModeString;
 
 @end

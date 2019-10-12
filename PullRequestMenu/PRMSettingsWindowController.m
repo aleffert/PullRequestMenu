@@ -21,6 +21,13 @@
 @property (strong, nonatomic) IBOutlet NSButton* showNotificationsBox;
 @property (strong, nonatomic) NSMutableArray* childControllers;
 
+@property (strong, nonatomic) IBOutlet NSPopUpButton* filterMenu;
+@property (strong, nonatomic) IBOutlet NSMenuItem* filterAllMenuItem;
+@property (strong, nonatomic) IBOutlet NSMenuItem* filterAssignedMenuItem;
+@property (strong, nonatomic) IBOutlet NSMenuItem* filterCreatedMenuItem;
+@property (strong, nonatomic) IBOutlet NSMenuItem* filterMentionedMenuItem;
+@property (strong, nonatomic) IBOutlet NSMenuItem* filterSubscribedMenuItem;
+
 @end
 
 @implementation PRMSettingsWindowController
@@ -46,6 +53,8 @@
     
     [self.window makeKeyAndOrderFront:nil];
     [NSApp activateIgnoringOtherApps:YES];
+    
+    [self updateFilterSelection];
 }
 
 - (void)showAuthController:(PRMAuthWindowController*)controller {
@@ -94,7 +103,36 @@
     
     [window setContentSize:contentSize];
     [window.contentView addSubview:view];
+}
 
+- (NSMapTable*)filterMenuMap {
+    NSMapTable* table = [NSMapTable strongToStrongObjectsMapTable];
+    [table setObject:@(PRMFilterModeAll) forKey:self.filterAllMenuItem];
+    [table setObject:@(PRMFilterModeAssigned) forKey:self.filterAssignedMenuItem];
+    [table setObject:@(PRMFilterModeCreated) forKey:self.filterCreatedMenuItem];
+    [table setObject:@(PRMFilterModeMentioned) forKey:self.filterMentionedMenuItem];
+    [table setObject:@(PRMFilterModeSubscribed) forKey:self.filterSubscribedMenuItem];
+
+    return table;
+}
+
+- (void)updateFilterSelection {
+    NSMapTable* filterMap = [self filterMenuMap];
+    PRMFilterMode currentMode = self.settingsController.filterMode;
+    for(NSMenuItem* item in filterMap.keyEnumerator) {
+        PRMFilterMode itemMode = [[filterMap objectForKey:item] integerValue];
+        item.state = itemMode == currentMode;
+        if(item.state == NSOnState) {
+            [self.filterMenu selectItem:item];
+        }
+    }
+}
+
+- (IBAction)choseIssueFilter:(NSMenuItem*)sender {
+    NSMapTable* filterMenuMap = [self filterMenuMap];
+    self.settingsController.filterMode = [[filterMenuMap objectForKey:sender] integerValue];
+    [self updateFilterSelection];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PRMAccountControllerChangedAccountNotification object:nil];
 }
 
 @end
