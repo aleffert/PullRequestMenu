@@ -8,6 +8,8 @@
 
 #import "PRMPullsTracker.h"
 
+#import <UserNotifications/UserNotifications.h>
+
 #import "PRMAccountController.h"
 #import "PRMPullRequest.h"
 #import "PRMSettingsController.h"
@@ -72,11 +74,12 @@ NSString* const PRMPullNotificationURL = @"PRMPullNotificationURL";
         BOOL shouldPostNotification = [self.settingsController shouldShowLocalNotifications];
         for(PRMPullRequest* request in foundRequests) {
             if(![self.knownRequests containsObject:request] && self.didInitialFetch && shouldPostNotification) {
-                NSUserNotification* notification = [[NSUserNotification alloc] init];
-                notification.title = @"New Pull Request";
-                notification.userInfo = @{PRMPullNotificationURL : request.htmlURL};
-                notification.informativeText = [NSString stringWithFormat:@"%@: %@", request.repoName, request.title];
-                [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+                UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
+                content.title = @"New Pull Request";
+                content.userInfo = @{PRMPullNotificationURL : request.htmlURL};
+                content.body = [NSString stringWithFormat:@"%@: %@", request.repoName, request.title];
+                UNNotificationRequest* notificationRequest = [UNNotificationRequest requestWithIdentifier:request.htmlURL content:content trigger:nil];
+                [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:notificationRequest withCompletionHandler:nil];
             }
         }
         self.knownRequests = [[NSMutableSet alloc] initWithArray:foundRequests];

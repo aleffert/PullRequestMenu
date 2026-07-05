@@ -8,6 +8,8 @@
 
 #import "PRMAppDelegate.h"
 
+#import <UserNotifications/UserNotifications.h>
+
 #import "PRMAccountController.h"
 #import "PRMLoginLaunchController.h"
 #import "PRMMenuView.h"
@@ -18,7 +20,7 @@
 
 static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
 
-@interface PRMAppDelegate () <PRMPullsTrackerDelegate, NSApplicationDelegate, NSUserNotificationCenterDelegate>
+@interface PRMAppDelegate () <PRMPullsTrackerDelegate, NSApplicationDelegate, UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) NSMenu* statusMenu;
 @property (strong, nonatomic) NSStatusItem* item;
@@ -38,10 +40,18 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.item = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    self.itemView = [[PRMMenuView alloc] initWithFrame:NSMakeRect(0, 0, 20, 20) statusItem:self.item];
-    [self.item setView:self.itemView];
-    
-    [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
+    NSStatusBarButton* button = self.item.button;
+    self.itemView = [[PRMMenuView alloc] initWithFrame:button.bounds statusItem:self.item];
+    self.itemView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    [button addSubview:self.itemView];
+
+    UNUserNotificationCenter* notificationCenter = [UNUserNotificationCenter currentNotificationCenter];
+    notificationCenter.delegate = self;
+    [notificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if(error) {
+            NSLog(@"Error requesting notification authorization %@", error);
+        }
+    }];
     
     PRMSettingsController* settingsController = [[PRMSettingsController alloc] init];
     
@@ -184,13 +194,16 @@ static CGFloat PRMNormalPollInterval = 20; // default is twenty seconds
 
 #pragma mark Notifications
 
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
-    return YES;
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    completionHandler(UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionSound);
 }
 
-- (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
-    NSString* url = [[notification userInfo] objectForKey:PRMPullNotificationURL];
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    NSString* url = [response.notification.request.content.userInfo objectForKey:PRMPullNotificationURL];
+    if(url) {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+    }
+    completionHandler();
 }
 
 @end

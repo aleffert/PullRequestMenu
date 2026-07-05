@@ -32,21 +32,19 @@ static NSString* PRMLaunchHelperBundleID = @"com.ognid.PRMLaunchHelper";
 
 - (BOOL)launchOnLogin
 {
-    NSArray* jobs = (__bridge_transfer NSArray*)SMCopyAllJobDictionaries(kSMDomainUserLaunchd);
-
-    for (NSDictionary* job in jobs) {
-        NSString* label = job[@"Label"];
-        if ([label rangeOfString:PRMLaunchHelperBundleID].location != NSNotFound) {
-            return [job[@"OnDemand"] boolValue];
-        }
-    }
-    return NO;
+    SMAppService* service = [SMAppService loginItemServiceWithIdentifier:PRMLaunchHelperBundleID];
+    return service.status == SMAppServiceStatusEnabled;
 }
 
 - (void)setLaunchOnLogin:(BOOL)value
 {
-    SMLoginItemSetEnabled((__bridge CFStringRef)PRMLaunchHelperBundleID, value);
-    self.launchOnLoginItem.state = value;
+    SMAppService* service = [SMAppService loginItemServiceWithIdentifier:PRMLaunchHelperBundleID];
+    NSError* error = nil;
+    BOOL success = value ? [service registerAndReturnError:&error] : [service unregisterAndReturnError:&error];
+    if(!success) {
+        NSLog(@"Error updating login item: %@", error);
+    }
+    self.launchOnLoginItem.state = value ? NSControlStateValueOn : NSControlStateValueOff;
 }
 
 @end

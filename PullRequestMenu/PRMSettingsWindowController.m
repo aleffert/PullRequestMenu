@@ -122,7 +122,7 @@
     for(NSMenuItem* item in filterMap.keyEnumerator) {
         PRMFilterMode itemMode = [[filterMap objectForKey:item] integerValue];
         item.state = itemMode == currentMode;
-        if(item.state == NSOnState) {
+        if(item.state == NSControlStateValueOn) {
             [self.filterMenu selectItem:item];
         }
     }

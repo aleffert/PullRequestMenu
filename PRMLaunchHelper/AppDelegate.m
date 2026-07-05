@@ -25,18 +25,28 @@
     }
     
     if (!alreadyRunning) {
+        // The helper lives at .../PullRequestMenu.app/Contents/Library/LoginItems/PRMLaunchHelper.app.
+        // Strip the last four path components to get the main app bundle.
         NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSArray *p = [path pathComponents];
-        NSMutableArray *pathComponents = [NSMutableArray arrayWithArray:p];
-        [pathComponents removeLastObject];
-        [pathComponents removeLastObject];
-        [pathComponents removeLastObject];
-        [pathComponents addObject:@"MacOS"];
-        [pathComponents addObject:@"PullRequestMenu"];
-        NSString *newPath = [NSString pathWithComponents:pathComponents];
-        [[NSWorkspace sharedWorkspace] launchApplication:newPath];
+        NSMutableArray *pathComponents = [NSMutableArray arrayWithArray:[path pathComponents]];
+        [pathComponents removeLastObject]; // PRMLaunchHelper.app
+        [pathComponents removeLastObject]; // LoginItems
+        [pathComponents removeLastObject]; // Library
+        [pathComponents removeLastObject]; // Contents
+        NSString *mainAppPath = [NSString pathWithComponents:pathComponents];
+        NSURL *mainAppURL = [NSURL fileURLWithPath:mainAppPath];
+
+        NSWorkspaceOpenConfiguration *configuration = [NSWorkspaceOpenConfiguration configuration];
+        [[NSWorkspace sharedWorkspace] openApplicationAtURL:mainAppURL configuration:configuration completionHandler:^(NSRunningApplication * _Nullable app, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"Error launching PullRequestMenu: %@", error);
+            }
+            [NSApp terminate:nil];
+        }];
     }
-    [NSApp terminate:nil];
+    else {
+        [NSApp terminate:nil];
+    }
 }
 
 

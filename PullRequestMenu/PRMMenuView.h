@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PRMMenuView : NSView <NSMenuDelegate>
+@interface PRMMenuView : NSView
 
 @property (strong, nonatomic) NSString* text;
 

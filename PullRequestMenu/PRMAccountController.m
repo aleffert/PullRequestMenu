@@ -12,17 +12,21 @@
 
 NSString* const PRMAccountControllerChangedAccountNotification = @"PRMAccountControllerChangedAccountNotification";
 
-@interface PRMAccountInfo () <NSCoding>
+@interface PRMAccountInfo () <NSSecureCoding>
 
 @end
 
 @implementation PRMAccountInfo
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if(self != nil) {
-        self.baseURL = [aDecoder decodeObjectForKey:@"baseURL"];
-        self.accessToken = [aDecoder decodeObjectForKey:@"accessToken"];
+        self.baseURL = [aDecoder decodeObjectOfClass:[NSString class] forKey:@"baseURL"];
+        self.accessToken = [aDecoder decodeObjectOfClass:[NSString class] forKey:@"accessToken"];
         self.enterprise = [aDecoder decodeBoolForKey:@"enterprise"];
     }
     return self;
@@ -59,7 +63,11 @@ NSString* const PRMAccountControllerChangedAccountNotification = @"PRMAccountCon
     OSStatus error = 0;
     NSData* data = [self.keychainHelper loadWithError:&error];
     if(data) {
-        self.accountInfo = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        NSError* unarchiveError = nil;
+        self.accountInfo = [NSKeyedUnarchiver unarchivedObjectOfClass:[PRMAccountInfo class] fromData:data error:&unarchiveError];
+        if(unarchiveError) {
+            NSLog(@"Error unarchiving account info %@", unarchiveError);
+        }
     }
     if(error != errSecSuccess && error != errSecItemNotFound) {
         NSLog(@"Error loading keychain %ld", (long)error);
@@ -69,7 +77,11 @@ NSString* const PRMAccountControllerChangedAccountNotification = @"PRMAccountCon
 - (void)saveAccountInfo:(PRMAccountInfo *)accountInfo {
     self.accountInfo = accountInfo;
     if(accountInfo) {
-        NSData* data = [NSKeyedArchiver archivedDataWithRootObject:accountInfo];
+        NSError* archiveError = nil;
+        NSData* data = [NSKeyedArchiver archivedDataWithRootObject:accountInfo requiringSecureCoding:YES error:&archiveError];
+        if(archiveError) {
+            NSLog(@"Error archiving account info %@", archiveError);
+        }
         OSStatus error = [self.keychainHelper saveData:data];
         if(error != errSecSuccess) {
             NSLog(@"Error saving keychain %ld", (long)error);
